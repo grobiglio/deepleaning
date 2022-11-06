@@ -22,13 +22,13 @@ class MeLiChallengeDataset(Dataset):
 
 
 class MeLiChallengeClassifier(nn.Module):
-    def __init__(self, embeddings, vector_size):
+    def __init__(self, embeddings):
         super().__init__()
-        self.vector_size = vector_size
+        self.vector_size = embeddings.weight.shape[1]
         self.embeddings = embeddings
-        self.hidden1 = nn.Linear(vector_size, 128)
-        self.hidden2 = nn.Linear(128, 128)
-        self.output = nn.Linear(128, 632)
+        self.hidden1 = nn.Linear(self.vector_size, 300)
+        self.hidden2 = nn.Linear(300, 500)
+        self.output = nn.Linear(500, 632)
     
     def forward(self, x):
         x = self.embeddings(x)
