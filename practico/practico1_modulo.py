@@ -6,6 +6,9 @@ import torch.nn.functional as F
 
 
 class MeLiChallengeDataset(Dataset):
+    '''Genera el dataset del MeLi Challenge a partir
+    de los tensores de Pythorch X (datos) e y (objetivos).
+    '''
     def __init__(self, X, y):
         self.X = X
         self.y = y
@@ -22,6 +25,15 @@ class MeLiChallengeDataset(Dataset):
 
 
 class MeLiChallengeClassifier(nn.Module):
+    '''
+    Red neuronal compuesta por:
+    - Primer capa: Embedding de 300 elementos
+    - Primer capa oculta: Lineal con entrada de 300 elementos y salida de 300 elementos
+    - Segunda capa oculta: Lineal con entrada de 300 elementos y salida de 500 elementos
+    - Salida: Vector de 632 elementos decimales.
+    ⚠ ATENCIÓN ⚠ Este último es el que no logra conciliar con el valor verdadero, que solamente es un
+    elemento entero.
+    '''
     def __init__(self, embeddings):
         super().__init__()
         self.vector_size = embeddings.weight.shape[1]
