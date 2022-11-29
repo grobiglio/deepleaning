@@ -45,19 +45,27 @@ NOTA 2: Los archivos involucrados en este práctico, a saber:
 - diccionario.txt
 - X_train.pt
 - y_train.pt
-- X_test.pt
-- y_test.pt
+- X_val.pt
+- y_val.pt
 - embeddings_matrix.pt
 
 Se encuentran en una carpeta `data` que no ha sido subida al repositorio remoto por cuestión de tamaño de los archivos.
 
-## Obstáculos:
+De todos modos, se puede acceder a esta carpeta mediante este link 👉 [carpeta data](https://drive.google.com/drive/folders/1wTTNe6FI6rLY0ltdg08Etue-PIC5lQ1C?usp=share_link).
+
+## Obstáculos primera entrega:
 
 No logramos entrenar la red neuronal porque la salida de la misma no se puede comparar con el target.
 - El target es un valor entero.
 - La salida es un vector de 632 elementos decimales.
 
 Sin embargo, el código funciona y logramos comprender la lógica de Pytorch y el Procesamiento del Lenguaje Natural.
+
+## Obstáculos segunda entrega:
+
+Tras la devolución realizada por los profesores logramos que el accuracy funcione. Da un valor del 1%, lo cual no satisface, pero al menos funciona.
+
+Se logró que el valor de la función de costo disminuya desde una valor de 6.43 a 6.3 en tres épocas de entrenamiento. Eso representa una mejora respecto de la primera entrega. Aún así se considera que se puede mejorar el algoritmo.
 
 ## Mlflow
 
